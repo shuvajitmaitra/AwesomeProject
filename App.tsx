@@ -32,18 +32,6 @@ function App() {
       },
       status => {
         switch (status) {
-          case codePush.SyncStatus.CHECKING_FOR_UPDATE:
-            Alert.alert('Update Status', 'Checking for updates...');
-            break;
-          case codePush.SyncStatus.DOWNLOADING_PACKAGE:
-            Alert.alert('Update Status', 'Downloading package...');
-            break;
-          case codePush.SyncStatus.INSTALLING_UPDATE:
-            Alert.alert('Update Status', 'Installing update...');
-            break;
-          case codePush.SyncStatus.UP_TO_DATE:
-            Alert.alert('Update Status', 'App is up to date.');
-            break;
           case codePush.SyncStatus.UPDATE_INSTALLED:
             Alert.alert(
               'Update Installed',
@@ -60,25 +48,10 @@ function App() {
               ],
             );
             break;
-          case codePush.SyncStatus.UPDATE_IGNORED:
-            Alert.alert('Update Status', 'Update was ignored by the user.');
-            break;
           case codePush.SyncStatus.UNKNOWN_ERROR:
             Alert.alert(
               'Update Error',
               'An unknown error occurred during the update process.',
-            );
-            break;
-          case codePush.SyncStatus.SYNC_IN_PROGRESS:
-            Alert.alert(
-              'Update Status',
-              'Another sync operation is in progress.',
-            );
-            break;
-          case codePush.SyncStatus.AWAITING_USER_ACTION:
-            Alert.alert(
-              'Update Status',
-              'Awaiting user action for update installation.',
             );
             break;
         }
@@ -146,7 +119,7 @@ function App() {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>
-        Update Available 4.0
+        Update Available 6.0
       </Text>
       <Button title="Clear CodePush Updates" onPress={clearCodePushUpdates} />
     </View>

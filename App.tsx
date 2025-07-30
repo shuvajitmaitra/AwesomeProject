@@ -16,17 +16,6 @@ function App() {
   const syncWithCodePush = () => {
     codePush.sync(
       {
-        updateDialog: {
-          appendReleaseDescription: true,
-          descriptionPrefix: '\n\nChange log:\n',
-          title: 'Update Available',
-          mandatoryUpdateMessage: 'A mandatory update is required to continue.',
-          mandatoryContinueButtonLabel: 'Install Now',
-          optionalUpdateMessage:
-            'An update is available. Would you like to install it?',
-          optionalInstallButtonLabel: 'Install',
-          optionalIgnoreButtonLabel: 'Ignore',
-        },
         installMode: codePush.InstallMode.ON_NEXT_RESTART,
         mandatoryInstallMode: codePush.InstallMode.IMMEDIATE,
       },
@@ -55,12 +44,6 @@ function App() {
             );
             break;
         }
-      },
-      ({ receivedBytes, totalBytes }) => {
-        Alert.alert(
-          'Download Progress',
-          `Downloaded ${receivedBytes} of ${totalBytes} bytes.`,
-        );
       },
     );
   };
@@ -119,7 +102,7 @@ function App() {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', color: 'white' }}>
-        Update Available 6.0
+        Check new function
       </Text>
       <Button title="Clear CodePush Updates" onPress={clearCodePushUpdates} />
     </View>

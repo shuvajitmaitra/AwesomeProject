@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AwesomeProject</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">RALOg3GfLSKlMWde4kclkUwZdSl5NJzx4ixwMl</string>
+    <string moduleConfig="true" name="CodePushServerURL">https://api.revopush.org</string>
+</resources>
